@@ -38,7 +38,7 @@ int main() // Ouverture du main
 
    cout << endl; // Passe à la ligne
 
-   while (ventesBrutes != QUITTER) // Tant que les ventes ne sont pas égale à -1 rentrer
+   while (ventesBrutes != QUITTER) // Tant que les ventes ne sont pas égale à -1 rentrer dans la boucle
    {
       while (ventesBrutes >= 0) // Tant que les ventes brutes sont dans le positif faire le calcul
       {
