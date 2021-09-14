@@ -24,6 +24,7 @@
     <ProjectGuid>{1c106c10-fabf-43b6-93aa-f1821aed53ec}</ProjectGuid>
     <RootNamespace>Maximum</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Devinette</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

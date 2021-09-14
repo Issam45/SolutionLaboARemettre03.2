@@ -43,7 +43,8 @@ int main() // Ouverture du main
 
    while (nb != QUITTER) // Tant que le nb  n'est pas égale à -1 rentrer dans la boucle
    {
-      while (nb >= 0 && nb <= 100)
+
+      if (nb >= 0 || nb <= 100 && (nb != QUITTER))
       {
 
          while (nb != random && compteur > MAX && nb != QUITTER)
