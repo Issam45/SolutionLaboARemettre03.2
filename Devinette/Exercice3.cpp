@@ -12,80 +12,38 @@ int main() // Ouverture du main
 
    // Déclare mes variables, il y a des variables pr les infos fournies par l'utilisateur. C'est la responsabilité de l'utilisateur de fournir cette info.
    int nb;
-   int max = 0;
-   int compteur;
+   int max = 0; // Initialiser max à zéro, ce n'est pas une valeur que l'utilisateur doit rentrer
+   //int compteur;
 
-   // Déclaration des constantes qui doivent être initialisées à leur déclaration
+   //Initialiser une constante max pour utiliser dans la boucle for, j'initialise le compteur à 1 donc le max à 11 pour pouvoir rentrer 10 fois dans la boucle
+   const int MAX = 11;
 
-   const int QUITTER = -1;
-
-
-   cout << "Ce programme lit 10 nombres et affiche la plus grande valeur. \n \n"; // Affiche ce que le programme vas faire
-
-   cout << "!!Pour quitter en tout moment rentrer (-1) pour la première valeur et n'importe quel valeur pour le deuxième nombre!!" << endl; // Dis à l'utilisateur comment quitter le programme
-
-   cout << "\t \t -------------------------------Exercie Maximum------------------------------- \n"; // Affiche dans quel exercice nous sommes présentement
-
-   // Demande à l'utilisateur les ventes brutes cette semaine
-   cout << "Rentrer un nombre: ";
-
-   cin >> nb; // Conserves la donnée entrée
-
-   cout << endl; // Passe à la ligne
-
-   while (nb != QUITTER) // Tant que les ventes ne sont pas égale à -1 rentrer dans la boucle
+   // Initilaliser compteur à 1 pour que se soit plus visuel à comprendre pour l'utilisateur (lui dire combien de nombre il à déjà rentrer)
+   for (int compteur = 1; compteur < MAX; compteur++) // Tant que compteur est plus petit que 11 exclusivement, incrémenter le compteur de 1 et continuer à rentrer dans le for.
    {
-      compteur = 0;
-
-      while (compteur < 9)
-      {
-
-         cout << "Ce programme lit 10 nombres et affiche la plus grande valeur. \n \n"; // Affiche ce que le programme vas faire
-
-         cout << "!!Pour quitter en tout moment rentrer (-1) pour la première valeur et n'importe quel valeur pour le deuxième nombre!!" << endl; // Dis à l'utilisateur comment quitter le programme
-
-         cout << "\t \t -------------------------------Exercie Maximum------------------------------- \n"; // Affiche dans quel exercice nous sommes présentement
-
-         // Demande à l'utilisateur les ventes brutes cette semaine
-         cout << "Rentrer un nombre: ";
-
-         cin >> nb; // Conserves la donnée entrée
-
-         cout << endl; // Passe à la ligne
-
-         compteur++;
-
-         system("pause");
-         system("cls");
-
-         if (nb > max)
-         {
-            max = nb;
-         }
-      }
-
-      
-      cout << max << " est la plus grande valeur!" << endl;
-      
-      system("pause");
-      system("cls");
-
       cout << "Ce programme lit 10 nombres et affiche la plus grande valeur. \n \n"; // Affiche ce que le programme vas faire
-
-      cout << "!!Pour quitter en tout moment rentrer (-1) pour la première valeur et n'importe quel valeur pour le deuxième nombre!!" << endl; // Dis à l'utilisateur comment quitter le programme
 
       cout << "\t \t -------------------------------Exercie Maximum------------------------------- \n"; // Affiche dans quel exercice nous sommes présentement
 
-      // Demande à l'utilisateur les ventes brutes cette semaine
-      cout << "Rentrer un nombre: ";
+      cout << "(" << compteur << ")" << "Rentrer un nombre: "; // Demande à l'utilisateur de rentrer un nombre et lui affiche combien de nombre il a déjà rentrer entre parenthèse
 
       cin >> nb; // Conserves la donnée entrée
 
-      cout << endl; // Passe à la ligne
+      // Si nb est plus grand que max ou que max est égal à zéro alors rentrer dans la boucle et faire ce qui est inscrit
+      if (nb >= max || max == 0) // (condition si max est == 0 rajouter, car sinon les chiffres négatif ne seront pas pris en compte puisque max sera toujours plus grand qu'un nombre négatif inscrit par l'utilisateur)
+      {
+         max = nb; // max prend la valeur de nb
+      }
+
+      system("pause"); // Faire une pause à l'écran
+      system("cls"); // Effacer ce qui se trouve sur l'écran
 
    }
 
-   cout << "Bonne journée!" << endl;
+   cout << max << " est la plus grande valeur!" << endl; // Afficher à l'écran la valeur de max qui est la plus grande valeur des 10 nombres rentrer par l'utilisateur 
+
+
+   cout << "Bonne journée!" << endl; // Afficher bonne journée
 
    system("pause");
 
@@ -95,12 +53,20 @@ int main() // Ouverture du main
 
 /*          Plan de test
 
-   ventes                  salaire total
+   nb1      nb2      nb3      nb4      nb5      nb6      nb7      nb8      nb9      nb10                  max
 
-   5000$                    625$
-   1000$                    325$
-   -1$                      Bonne journée!
-   -5000                    Erreur les ventes sont dans le négatifs et demande de rentrer une nouvelle valeur
-   1000.5$                  325.038$
-   a                        Le programme plante dans une boucle infini
+   1        2        3        4        5        6        7        8        9        10                    10
+
+   10       9        8        7        6        5        4        3        2        1                     10
+
+   -2       -3       -4       -5       -6       -7       -8       -9       -10       -11                  -2
+
+   0        0        0        0        0        0        0        0        0        0                     0
+
+   -1                                                                                                     Quitte le programme
+
+   -10      -9       -8       -7       -6       -5       -4       -3       -2       -1                    -1
+
+
+
 */

@@ -44,10 +44,10 @@ int main() // Ouverture du main
    while (nb != QUITTER) // Tant que le nb  n'est pas égale à -1 rentrer dans la boucle
    {
 
-      if (nb >= 0 || nb <= 100 && (nb != QUITTER))
+      if (nb >= 0 || nb <= 100)
       {
 
-         while (nb != random && compteur > MAX && nb != QUITTER)
+         while (nb != random && compteur > MAX)
          {
             cout << "Oups! Ce n'est pas le chiffre que j'avais en tête" << endl;
 
