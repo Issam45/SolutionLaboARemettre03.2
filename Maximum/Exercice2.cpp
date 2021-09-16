@@ -14,7 +14,7 @@ int main() // Ouverture du main
 
    int random; // permet de mémoriser le nombre choisi aléatoirement par l’ordinateur
    int nb; // Créer une variable pour le nombre que l'utilisateur vas choisir
-   int compteur;
+   int compteur; // variable du compteur
 
    // Déclaration des constantes qui doivent être initialisées à leur déclaration
    const int QUITTER = -1;
@@ -44,19 +44,19 @@ int main() // Ouverture du main
    while (nb != QUITTER) // Tant que le nb  n'est pas égale à -1 rentrer dans la boucle
    {
 
-      if (nb >= 0 || nb <= 100)
+      if (nb >= 0 || nb <= 100) // Si nb n'est pas compris entre 0 et 100 inclusivement ne pas rentrer
       {
 
-         while (nb != random && compteur > MAX)
+         while (nb != random && compteur > MAX) // Tant que nb n'est pas le random choisi par l'ordi et et que le compteur n'a pas atteint la limite rentrer
          {
             cout << "Oups! Ce n'est pas le chiffre que j'avais en tête" << endl;
 
-            cout << random << endl;
+            cout << random << endl; // Afficher random le nombre choisi pour tester
 
             system("pause");
             system("cls");
          
-            cout << "Il te reste encore " << compteur << " chances" << endl;
+            cout << "Il te reste encore " << compteur << " chances" << endl; // Afficher le nombre de chance restant
 
             cout << "Deviner le nombre que j'ai en mémoire: ";
 
@@ -64,7 +64,7 @@ int main() // Ouverture du main
 
             cout << endl; // Passe à la ligne
 
-            compteur = compteur-1;
+            compteur = compteur-1; // Baisser le compteur de 1
 
          }
 
@@ -128,12 +128,8 @@ int main() // Ouverture du main
 
 /*          Plan de test
 
-   ventes                  salaire total
+   nb                  affichage
 
-   5000$                    625$
-   1000$                    325$
-   -1$                      Bonne journée!
-   -5000                    Erreur les ventes sont dans le négatifs et demande de rentrer une nouvelle valeur
-   1000.5$                  325.038$
+
    a                        Le programme plante dans une boucle infini
 */
